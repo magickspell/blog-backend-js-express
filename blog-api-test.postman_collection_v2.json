@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "f09d421f-5f85-45d1-9e10-0220b9125f89",
+		"name": "blog api test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24373883"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3001/auth/test-auth"
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test4@test.test\",\r\n    \"username\": \"test4\",\r\n    \"password\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3001/auth/registration"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"testPASS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3001/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "authme",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3001/auth/me"
+			},
+			"response": []
+		},
+		{
+			"name": "create post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I3ZjdmMjdmNGU5Njc5YWI0OTE2NTAiLCJpYXQiOjE2NzMwMjMzNDQsImV4cCI6MTY3MzAzMDU0NH0.Mwm7S40dx70XiiKK5JsrjypdoBQBFWWsJRgFVwr4HR8"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"title\",\r\n    \"text\": \"texttexttext\",\r\n    \"author\": \"63b7f7f27f4e9679ab491650\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3001/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "get all posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3001/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "get post id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3001/post/63b85baf67b3dca898ae8efa"
+			},
+			"response": []
+		},
+		{
+			"name": "delete post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3001/post/63b85baf67b3dca898ae8efa"
+			},
+			"response": []
+		},
+		{
+			"name": "update post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"titleNew\",\r\n    \"text\": \"textNew\",\r\n    \"imageUrl\": \"imageUrlNew\",\r\n    \"tags\": [\"newTag\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3001/post/63b874c691fc0d42a13348df"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "upload",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2I3ZjdmMjdmNGU5Njc5YWI0OTE2NTAiLCJpYXQiOjE2NzMwODAwMzYsImV4cCI6MTY3MzQzNjQzNn0.oJUwvEN0qpV-yw9I3-zWOnFCDYGjR_yfi28IHQfSJqM"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/C:/Users/solom/Downloads/jedi.jpg"
+						}
+					]
+				},
+				"url": "http://localhost:3001/upload"
+			},
+			"response": []
+		}
+	]
+}
